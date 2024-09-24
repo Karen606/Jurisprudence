@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="a9D-br-9tw">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="A2F-PS-sWV">
+            <objects>
+                <navigationController id="a9D-br-9tw" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qYw-YT-a12">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="fF0-AI-Y2A"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DYc-vt-2Zy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-640" y="-2"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="MenuViewController" id="BYZ-38-t0r" customClass="MenuViewController" customModule="Jurisprudence" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MenuIcon" translatesAutoresizingMaskIntoConstraints="NO" id="K4W-2W-WfM">
+                                <rect key="frame" x="57" y="103" width="336" height="330"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="4s1-mu-EMC">
+                                <rect key="frame" x="56" y="433" width="281" height="335"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UkH-8R-fEE" customClass="BaseButton" customModule="Jurisprudence" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="281" height="56"/>
+                                        <color key="backgroundColor" red="0.44705882352941173" green="0.52156862745098043" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="CGh-dq-zI9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <string key="title">Сase and business 
+management</string>
+                                            <color key="titleColor" red="0.95686274766921997" green="0.95686274766921997" blue="0.9490196704864502" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickedCaseAndBusiness:" destination="BYZ-38-t0r" eventType="touchUpInside" id="25L-rP-tHi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fR-gm-OHf" customClass="BaseButton" customModule="Jurisprudence" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="93" width="281" height="56"/>
+                                        <color key="backgroundColor" red="0.44705882352941173" green="0.52156862745098043" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="OkC-bc-Hlz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Document management">
+                                            <color key="titleColor" red="0.95686274766921997" green="0.95686274766921997" blue="0.9490196704864502" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickedDocumentManagement:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AeX-7n-9kS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrd-1O-xu7" customClass="BaseButton" customModule="Jurisprudence" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="186" width="281" height="56"/>
+                                        <color key="backgroundColor" red="0.44705882352941173" green="0.52156862745098043" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="Ho6-5W-kyx"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Reference materials">
+                                            <color key="titleColor" red="0.95686274766921997" green="0.95686274766921997" blue="0.9490196704864502" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickedReferenceMaterials:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I5u-6y-9rw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzh-EY-Qwv" customClass="BaseButton" customModule="Jurisprudence" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="279" width="281" height="56"/>
+                                        <color key="backgroundColor" red="0.44705882349999998" green="0.52156862749999999" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="7ib-ae-Fz7"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Сalendar and deadlines">
+                                            <color key="titleColor" red="0.95686274766921997" green="0.95686274766921997" blue="0.9490196704864502" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickedCalendarAndDeadlines:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T87-bX-KFM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4s1-mu-EMC" secondAttribute="trailing" constant="56" id="2Sn-9i-vhm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="K4W-2W-WfM" secondAttribute="trailing" id="IFH-Oe-xka"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4s1-mu-EMC" secondAttribute="bottom" constant="50" id="K6i-XU-OTJ"/>
+                            <constraint firstItem="K4W-2W-WfM" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.387324" id="Sei-rN-ff3"/>
+                            <constraint firstItem="K4W-2W-WfM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="nt7-5R-Was"/>
+                            <constraint firstItem="4s1-mu-EMC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="56" id="qa7-ll-rAE"/>
+                            <constraint firstItem="4s1-mu-EMC" firstAttribute="top" secondItem="K4W-2W-WfM" secondAttribute="bottom" id="sS2-OS-bqs"/>
+                            <constraint firstItem="K4W-2W-WfM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uib-gg-v02"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="3di-qd-ee9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75.572519083969468" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="MenuIcon" width="336" height="330"/>
+        <namedColor name="Background">
+            <color red="0.21568627450980393" green="0.30588235294117649" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
