@@ -18,7 +18,8 @@
                 <outlet property="addButton" destination="5oe-Eb-dKc" id="Cqe-LR-VS5"/>
                 <outlet property="addView" destination="pec-br-MJZ" id="rLw-D8-auo"/>
                 <outlet property="cancelButton" destination="j66-9Z-Tna" id="Snf-9A-MzS"/>
-                <outlet property="costTextField" destination="oe2-Bm-0an" id="p9M-IG-XRh"/>
+                <outlet property="contentView" destination="H9N-gP-Rho" id="ph5-Il-NxR"/>
+                <outlet property="costTextField" destination="oe2-Bm-0an" id="TDB-gt-VfW"/>
                 <outlet property="dateTextField" destination="5Ar-k4-jyQ" id="EpV-FZ-ref"/>
                 <outlet property="nameTextField" destination="EPH-DO-B2N" id="clb-KX-bMd"/>
                 <outlet property="scrollView" destination="RG4-lj-Bu9" id="pR3-pO-TJz"/>
@@ -26,6 +27,10 @@
                 <outlet property="typeTextField" destination="Yeg-eX-ahA" id="Q4B-67-wHN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="worksTableView" destination="WJF-so-cIM" id="3Xg-wc-nzU"/>
+                <outletCollection property="textFields" destination="EPH-DO-B2N" collectionClass="NSMutableArray" id="lTm-jV-pMx"/>
+                <outletCollection property="textFields" destination="Yeg-eX-ahA" collectionClass="NSMutableArray" id="eAL-SO-6h0"/>
+                <outletCollection property="textFields" destination="5Ar-k4-jyQ" collectionClass="NSMutableArray" id="ILf-UF-ouE"/>
+                <outletCollection property="textFields" destination="oe2-Bm-0an" collectionClass="NSMutableArray" id="dYA-SM-esu"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -107,7 +112,7 @@
                                                                     <attributedString key="attributedText"/>
                                                                     <textInputTraits key="textInputTraits"/>
                                                                 </textField>
-                                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="The cost of the service" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oe2-Bm-0an" customClass="BaseTextField" customModule="Jurisprudence" customModuleProvider="target">
+                                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="The cost of the service" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oe2-Bm-0an" customClass="PriceTextField" customModule="Jurisprudence" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="183" width="281" height="37"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="37" id="NIa-r7-icQ"/>
@@ -151,12 +156,16 @@
                                 </stackView>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <gestureRecognizers/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="zjR-Pi-VcB" secondAttribute="bottom" constant="8" id="Efg-ho-yhH"/>
                                 <constraint firstItem="zjR-Pi-VcB" firstAttribute="leading" secondItem="H9N-gP-Rho" secondAttribute="leading" id="IMy-5J-KXg"/>
                                 <constraint firstAttribute="trailing" secondItem="zjR-Pi-VcB" secondAttribute="trailing" id="VD9-W6-7Kx"/>
                                 <constraint firstItem="zjR-Pi-VcB" firstAttribute="top" secondItem="H9N-gP-Rho" secondAttribute="top" id="Vl0-Mu-rLI"/>
                             </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="DSV-B1-b1j" appends="YES" id="rTR-tw-91D"/>
+                            </connections>
                         </view>
                     </subviews>
                     <constraints>
@@ -218,6 +227,11 @@
             </constraints>
             <point key="canvasLocation" x="23.664122137404579" y="19.718309859154932"/>
         </view>
+        <tapGestureRecognizer id="DSV-B1-b1j">
+            <connections>
+                <action selector="handleTapGesture:" destination="-1" id="RBG-d2-a3r"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="Add" width="42.666667938232422" height="42.666667938232422"/>

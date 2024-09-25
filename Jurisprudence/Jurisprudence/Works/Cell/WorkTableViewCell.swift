@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol WorkTableViewCellDelegate: AnyObject {
+    func clickedSatus(button: UIButton, id: UUID)
+}
+
 class WorkTableViewCell: UITableViewCell {
     @IBOutlet weak var clientName: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
@@ -15,16 +19,13 @@ class WorkTableViewCell: UITableViewCell {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var statusButton: UIButton!
     @IBOutlet weak var bgView: UIView!
+    weak var delegate: WorkTableViewCellDelegate?
+    private var id: UUID?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        self.layer.cornerRadius = 15
-//        self.layer.borderWidth = 1
-//        self.layer.borderColor = #colorLiteral(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
-//        self.contentView.layer.cornerRadius = 15
         self.contentView.backgroundColor = .clear
         self.backgroundColor = UIColor.clear
-//        self.contentView.layer.backgroundColor = UIColor.clear.cgColor
         self.bgView.layer.cornerRadius = 15
         self.bgView.layer.borderWidth = 1
         self.bgView.layer.borderColor = #colorLiteral(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
@@ -43,10 +44,13 @@ class WorkTableViewCell: UITableViewCell {
         self.clientName.text = work.name
         self.typeLabel.text = work.type
         self.deadlineLabel.text = "Due date: \(work.deadline?.dateFormat() ?? "")"
-        self.costLabel.text = work.cost
+        self.costLabel.text = "\(work.cost)$"
         self.statusButton.setTitle(work.status.id, for: .normal)
+        self.id = work.id
     }
     
     @IBAction func clickedStatus(_ sender: UIButton) {
+        guard let id = id else { return }
+        delegate?.clickedSatus(button: sender, id: id)
     }
 }

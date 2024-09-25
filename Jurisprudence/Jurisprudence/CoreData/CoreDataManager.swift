@@ -23,11 +23,11 @@ class CoreDataManager {
         }()
         
         // MARK: - Add Work on Background Thread
-        func addWork(clientName: String, cost: String, deadline: Date, status: String, type: String, completion: @escaping (Error?) -> Void) {
+    func addWork(clientName: String, cost: String, deadline: Date, status: String, type: String, id: UUID, completion: @escaping (Error?) -> Void) {
             let backgroundContext = persistentContainer.newBackgroundContext()
             backgroundContext.perform {
                 let work = Work(context: backgroundContext) // Replace with your entity class name
-                work.id = UUID()
+                work.id = id
                 work.clientName = clientName
                 work.cost = cost
                 work.deadline = deadline
@@ -75,7 +75,7 @@ class CoreDataManager {
                     let results = try backgroundContext.fetch(fetchRequest)
                     var workModels: [WorkModel] = []
                     for work in results {
-                        let workModel = WorkModel(name: work.clientName ?? "", type: work.type ?? "", deadline: work.deadline, cost: work.cost ?? "", status: Status.status(value: work.status ?? ""))
+                        let workModel = WorkModel(id: work.id ?? UUID(), name: work.clientName ?? "", type: work.type ?? "", deadline: work.deadline, cost: work.cost ?? "", status: Status.status(value: work.status ?? ""))
                         workModels.append(workModel)
                     }
                     completion(workModels, nil)

@@ -11,7 +11,7 @@ class WorksViewModel {
     static let shared = WorksViewModel()
     @Published var works: [WorkModel] = []
     
-    @Published var workModel: WorkModel = WorkModel(name: "", type: "", deadline: nil, cost: "")
+    @Published var workModel: WorkModel = WorkModel(id: UUID(), name: "", type: "", deadline: nil, cost: "")
     
     private init() {}
     
@@ -24,7 +24,7 @@ class WorksViewModel {
     
     func addWork() {
         guard let date = workModel.deadline else { return }
-        CoreDataManager.shared.addWork(clientName: workModel.name, cost: workModel.cost, deadline: date, status: workModel.status.id, type: workModel.type) { [weak self] error in
+        CoreDataManager.shared.addWork(clientName: workModel.name, cost: workModel.cost, deadline: date, status: workModel.status.id, type: workModel.type, id: workModel.id) { [weak self] error in
             guard let self = self else { return }
             if let error = error {
                 print(error)
@@ -32,39 +32,18 @@ class WorksViewModel {
             }
             self.fetchWorks()
         }
+        self.clear()
+    }
+    
+    func changeStatus(id: UUID, status: String) {
+        CoreDataManager.shared.editWorkStatus(id: id, newStatus: status) { error in
+            if let error = error {
+                print(error)
+            }
+        }
     }
     
     func clear() {
-        workModel = WorkModel(name: "", type: "", deadline: nil, cost: "")
-    }
-}
-
-enum Status {
-    case inProcess
-    case completed
-    case delay
-    
-    var id: String {
-        switch self {
-        case .inProcess:
-            return "in process"
-        case .completed:
-            return "completed"
-        case .delay:
-            return "delay"
-        }
-    }
-    
-    static func status(value: String) -> Self {
-        switch value {
-        case "in process":
-            return .inProcess
-        case "completed":
-            return .completed
-        case "delay":
-            return .delay
-        default:
-            return .inProcess
-        }
+        workModel = WorkModel(id: UUID(), name: "", type: "", deadline: nil, cost: "")
     }
 }

@@ -40,6 +40,7 @@
 		6B0DA3292CA35EFA00C19A6D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0DA3282CA35EFA00C19A6D /* CoreDataManager.swift */; };
 		6B0DA32B2CA365F000C19A6D /* WorkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0DA32A2CA365F000C19A6D /* WorkModel.swift */; };
 		6BE062E42CA376FC004AC311 /* SFProText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BE062E32CA376FC004AC311 /* SFProText-Bold.ttf */; };
+		6BE062E92CA473F3004AC311 /* PriceTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE062E82CA473F3004AC311 /* PriceTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		6B0DA3282CA35EFA00C19A6D /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		6B0DA32A2CA365F000C19A6D /* WorkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkModel.swift; sourceTree = "<group>"; };
 		6BE062E32CA376FC004AC311 /* SFProText-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Bold.ttf"; sourceTree = "<group>"; };
+		6BE062E82CA473F3004AC311 /* PriceTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				6B0DA30C2CA3408800C19A6D /* View.swift */,
 				6B0DA3142CA3476300C19A6D /* BaseTextField.swift */,
 				6B0DA3222CA35CB300C19A6D /* Date.swift */,
+				6BE062E82CA473F3004AC311 /* PriceTextField.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -258,6 +261,8 @@
 			dependencies = (
 			);
 			name = Jurisprudence;
+			packageProductDependencies = (
+			);
 			productName = Jurisprudence;
 			productReference = 6B0DA2CC2CA2E6B800C19A6D /* Jurisprudence.app */;
 			productType = "com.apple.product-type.application";
@@ -286,6 +291,8 @@
 				Base,
 			);
 			mainGroup = 6B0DA2C32CA2E6B800C19A6D;
+			packageReferences = (
+			);
 			productRefGroup = 6B0DA2CD2CA2E6B800C19A6D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -335,6 +342,7 @@
 				6B0DA2D02CA2E6B800C19A6D /* AppDelegate.swift in Sources */,
 				6B0DA3262CA35E5B00C19A6D /* WorksViewModel.swift in Sources */,
 				6B0DA31F2CA3552400C19A6D /* WorkTableViewCell.swift in Sources */,
+				6BE062E92CA473F3004AC311 /* PriceTextField.swift in Sources */,
 				6B0DA3062CA3045B00C19A6D /* InfoPresentationController.swift in Sources */,
 				6B0DA3032CA2FA3E00C19A6D /* BaseButton.swift in Sources */,
 				6B0DA2ED2CA2EBA400C19A6D /* NavigationViewController.swift in Sources */,
