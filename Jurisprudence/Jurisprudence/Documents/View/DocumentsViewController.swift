@@ -21,6 +21,7 @@ class DocumentsViewController: UIViewController {
     @IBOutlet weak var folderNameTextField: BaseTextField!
     @IBOutlet weak var tableViewHeightConst: NSLayoutConstraint!
     @IBOutlet weak var folderButton: UIButton!
+    @IBOutlet var tapGesture: UITapGestureRecognizer!
     private var cancellables: Set<AnyCancellable> = []
     private let menuButton = UIButton(type: .custom)
     private let viewModel = DocumentsViewModel.shared
@@ -38,11 +39,13 @@ class DocumentsViewController: UIViewController {
         menuButton.setImage(UIImage(named: "Menu"), for: .normal)
         menuButton.addTarget(self, action: #selector(clickedMenu), for: .touchUpInside)
         self.setNavigationBar(leftButton: UIButton(), rightButton: menuButton)
+        tapGesture.delegate = self
         searchTextField.delegate = self
         folderNameTextField.delegate = self
         documentsTableView.delegate = self
         documentsTableView.dataSource = self
         documentsTableView.register(UINib(nibName: "DocumentTableViewCell", bundle: nil), forCellReuseIdentifier: "DocumentTableViewCell")
+        searchTextField.font = .regularMulish(size: 16)
         searchTextField.layer.shadowOpacity = 0
         searchTextField.layer.shadowRadius = 0
         searchTextField.layer.shadowOffset = .zero
@@ -185,6 +188,16 @@ extension DocumentsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return viewModel.filteredDocuments.count - 1 == section ? 0 : 8
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let documentVC = DocumentViewController(nibName: "DocumentViewController", bundle: nil)
+        DocumentViewModel.shared.document = viewModel.filteredDocuments[indexPath.section]
+        documentVC.completion = { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.fetchDocuments()
+        }
+        self.navigationController?.pushViewController(documentVC, animated: true)
     }
 }
 
@@ -329,3 +342,8 @@ extension DocumentsViewController {
     }
 }
 
+extension DocumentsViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        return !(view.hitTest(touch.location(in: view), with: nil)?.isDescendant(of: documentsTableView) == true)
+    }
+}

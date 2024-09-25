@@ -25,6 +25,7 @@
                 <outlet property="scrollView" destination="Zc3-Lh-MlV" id="XvL-0g-SgP"/>
                 <outlet property="searchTextField" destination="y4U-qt-vWA" id="N8f-eX-Gu3"/>
                 <outlet property="tableViewHeightConst" destination="4yY-dK-drb" id="0uy-OJ-FGk"/>
+                <outlet property="tapGesture" destination="r9s-Ik-u4Q" id="qL9-V4-qtH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -41,7 +42,8 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="35" id="dfP-xu-wdy"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Search" translatesAutoresizingMaskIntoConstraints="NO" id="27m-9b-7PI">

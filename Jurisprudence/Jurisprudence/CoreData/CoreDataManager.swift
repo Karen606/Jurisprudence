@@ -119,4 +119,25 @@ class CoreDataManager {
         }
     }
     
+    func editDocument(id: UUID, content: Data?, completion: @escaping (Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Document> = Document.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+            
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                if let document = results.first {
+                    document.content = content
+                    try backgroundContext.save()
+                    completion(nil)
+                } else {
+                    completion(NSError(domain: "CoreData", code: 404, userInfo: [NSLocalizedDescriptionKey: "Work not found"]))
+                }
+            } catch {
+                completion(error)
+            }
+        }
+    }
+    
 }
