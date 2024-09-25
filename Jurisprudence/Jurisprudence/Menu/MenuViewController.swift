@@ -46,7 +46,10 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func clickedDocumentManagement(_ sender: UIButton) {
+        let documentsVC = DocumentsViewController(nibName: "DocumentsViewController", bundle: nil)
+        self.navigationController?.pushViewController(documentsVC, animated: true)
     }
+    
     @IBAction func clickedReferenceMaterials(_ sender: UIButton) {
     }
     
