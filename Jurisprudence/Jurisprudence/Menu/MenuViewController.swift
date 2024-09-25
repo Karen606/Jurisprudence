@@ -41,6 +41,8 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func clickedCaseAndBusiness(_ sender: UIButton) {
+        let worksVC = WorksViewController(nibName: "WorksViewController", bundle: nil)
+        self.navigationController?.pushViewController(worksVC, animated: true)
     }
     
     @IBAction func clickedDocumentManagement(_ sender: UIButton) {

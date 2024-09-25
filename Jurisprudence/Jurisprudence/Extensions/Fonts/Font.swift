@@ -23,4 +23,12 @@ extension UIFont {
     static func boldMulish(size: CFloat) -> UIFont? {
         return UIFont(name: .bold, size: CGFloat(size))
     }
+    
+    static func lightMulish(size: CFloat) -> UIFont? {
+        return UIFont(name: .light, size: CGFloat(size))
+    }
+    
+    static func boldSFPro(size: CFloat) -> UIFont? {
+        return UIFont(name: .SFProBold, size: CGFloat(size))
+    }
 }

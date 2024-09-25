@@ -9,6 +9,8 @@
 		<string>Mulish-Regular.ttf</string>
 		<string>Mulish-SemiBold.ttf</string>
 		<string>Mulish-LightItalic.ttf</string>
+		<string>Mulish-Light.ttf</string>
+		<string>SFProText-Bold.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
