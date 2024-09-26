@@ -193,4 +193,87 @@ class CoreDataManager {
             }
         }
     }
+    
+    func fetchMaterials(completion: @escaping ([MaterialModel], Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Material> = Material.fetchRequest()
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                var materialModels: [MaterialModel] = []
+                for result in results {
+                    let materialModel = MaterialModel(id: result.id ?? UUID(), title: result.title ?? "", info: result.info ?? "")                 
+                    materialModels.append(materialModel)
+                }
+                completion(materialModels, nil)
+            } catch {
+                completion([], error)
+            }
+        }
+    }
+    
+    func saveMaterial(id: UUID, title: String, info: String, completion: @escaping (Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Material> = Material.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                let material: Material
+
+                if let existingMaterial = results.first {
+                    material = existingMaterial
+                } else {
+                    material = Material(context: backgroundContext)
+                    material.id = id
+                }
+                material.title = title
+                material.info = info
+                try backgroundContext.save()
+                completion(nil)
+            } catch {
+                completion(error)
+            }
+        }
+    }
+
+    
+    func addMaterial(id: UUID, title: String, info: String, completion: @escaping (Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let material = Material(context: backgroundContext)
+            material.id = id
+            material.title = title
+            material.info = info
+            do {
+                try backgroundContext.save()
+                completion(nil)
+            } catch {
+                completion(error)
+            }
+        }
+    }
+    
+    func editMaterial(id: UUID, title: String, info: String, completion: @escaping (Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Material> = Material.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                if let material = results.first {
+                    material.info = info
+                    material.title = title
+                    try backgroundContext.save()
+                    completion(nil)
+                } else {
+                    completion(NSError(domain: "CoreData", code: 404, userInfo: [NSLocalizedDescriptionKey: "Document not found"]))
+                }
+            } catch {
+                completion(error)
+            }
+        }
+    }
 }

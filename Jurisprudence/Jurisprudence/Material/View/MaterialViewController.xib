@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Mulish-Regular.ttf">
+            <string>Mulish-Regular</string>
+        </array>
+        <array key="SFProText-Bold.ttf">
+            <string>SFProText-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MaterialViewController" customModule="Jurisprudence" customModuleProvider="target">
+            <connections>
+                <outlet property="descriptionTextView" destination="r4z-RT-P2b" id="bWH-XJ-3Zm"/>
+                <outlet property="saveButton" destination="WUX-qw-IW2" id="KKn-h1-HCM"/>
+                <outlet property="titleTextField" destination="wIE-Ma-2cm" id="09d-H6-lfJ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uax-eJ-DbI">
+                    <rect key="frame" x="26" y="83" width="341" height="635"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="r4z-RT-P2b" customClass="BaseTextView" customModule="Jurisprudence" customModuleProvider="target">
+                            <rect key="frame" x="8" y="52" width="325" height="575"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="textColor" systemColor="labelColor"/>
+                            <fontDescription key="fontDescription" name="Mulish-Regular" family="Mulish" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wIE-Ma-2cm">
+                            <rect key="frame" x="8" y="8" width="325" height="38"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="r4z-RT-P2b" secondAttribute="bottom" constant="8" id="3Wp-vd-DSM"/>
+                        <constraint firstItem="wIE-Ma-2cm" firstAttribute="top" secondItem="Uax-eJ-DbI" secondAttribute="top" constant="8" id="Hdc-Er-KrB"/>
+                        <constraint firstAttribute="trailing" secondItem="r4z-RT-P2b" secondAttribute="trailing" constant="8" id="MSg-9u-7mN"/>
+                        <constraint firstItem="r4z-RT-P2b" firstAttribute="leading" secondItem="Uax-eJ-DbI" secondAttribute="leading" constant="8" id="Mrz-I7-yQ4"/>
+                        <constraint firstAttribute="trailing" secondItem="wIE-Ma-2cm" secondAttribute="trailing" constant="8" id="Y3m-HD-Cdf"/>
+                        <constraint firstItem="r4z-RT-P2b" firstAttribute="top" secondItem="wIE-Ma-2cm" secondAttribute="bottom" constant="6" id="g16-Z7-6rd"/>
+                        <constraint firstItem="r4z-RT-P2b" firstAttribute="height" secondItem="Uax-eJ-DbI" secondAttribute="height" multiplier="0.905308" id="mJk-1r-dEN"/>
+                        <constraint firstItem="wIE-Ma-2cm" firstAttribute="leading" secondItem="Uax-eJ-DbI" secondAttribute="leading" constant="8" id="xiW-T2-PpY"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUX-qw-IW2">
+                    <rect key="frame" x="130.66666666666666" y="733" width="131.99999999999997" height="44"/>
+                    <color key="backgroundColor" red="0.58039215690000001" green="0.6705882353" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="2Re-Fl-06b"/>
+                        <constraint firstAttribute="width" constant="132" id="UVA-b0-PEg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="20"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Save">
+                        <color key="titleColor" red="0.2156862745" green="0.30588235289999999" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="clickedSave:" destination="-1" eventType="touchUpInside" id="5JF-Bq-rhI"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="Background"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="WUX-qw-IW2" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="LHp-D5-2Z6"/>
+                <constraint firstItem="Uax-eJ-DbI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="26" id="Lua-Hb-jj4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Uax-eJ-DbI" secondAttribute="trailing" constant="26" id="OvN-2c-B0s"/>
+                <constraint firstItem="Uax-eJ-DbI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="aYl-jf-EBh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WUX-qw-IW2" secondAttribute="bottom" constant="41" id="hLb-lu-gsI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Uax-eJ-DbI" secondAttribute="bottom" constant="100" id="kxz-qw-Epg"/>
+                <constraint firstItem="WUX-qw-IW2" firstAttribute="top" secondItem="r4z-RT-P2b" secondAttribute="bottom" constant="23" id="w9T-lg-MaG"/>
+            </constraints>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="hXC-K6-o5R" appends="YES" id="KRa-72-cV9"/>
+            </connections>
+            <point key="canvasLocation" x="136.64122137404578" y="19.718309859154932"/>
+        </view>
+        <tapGestureRecognizer id="hXC-K6-o5R">
+            <connections>
+                <action selector="handleTapGesture:" destination="-1" id="tRK-H4-4BV"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <namedColor name="Background">
+            <color red="0.21600000560283661" green="0.3059999942779541" blue="0.27500000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

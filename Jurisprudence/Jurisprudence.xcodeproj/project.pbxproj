@@ -53,6 +53,15 @@
 		6BCA1C5D2CA4EF3D00283FDB /* DeadlineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCA1C5C2CA4EF3D00283FDB /* DeadlineModel.swift */; };
 		6BCA1C602CA4F00000283FDB /* DeadlineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCA1C5F2CA4F00000283FDB /* DeadlineViewModel.swift */; };
 		6BCA1C662CA4F99400283FDB /* BaseTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCA1C652CA4F99400283FDB /* BaseTextView.swift */; };
+		6BCA1C6B2CA506A900283FDB /* MaterialsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BCA1C6A2CA506A900283FDB /* MaterialsViewController.xib */; };
+		6BCA1C6C2CA506A900283FDB /* MaterialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCA1C692CA506A900283FDB /* MaterialsViewController.swift */; };
+		6BCA1C712CA50CD400283FDB /* MaterialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BCA1C702CA50CD400283FDB /* MaterialViewController.xib */; };
+		6BCA1C722CA50CD400283FDB /* MaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCA1C6F2CA50CD400283FDB /* MaterialViewController.swift */; };
+		6BCA1C752CA5120400283FDB /* MaterialsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCA1C742CA5120400283FDB /* MaterialsViewModel.swift */; };
+		6BCA1C782CA512AD00283FDB /* MaterialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCA1C772CA512AD00283FDB /* MaterialModel.swift */; };
+		6BCA1C7B2CA5166800283FDB /* MaterialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCA1C7A2CA5166800283FDB /* MaterialViewModel.swift */; };
+		6BCA1C802CA518A200283FDB /* MaterialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BCA1C7F2CA518A200283FDB /* MaterialTableViewCell.xib */; };
+		6BCA1C812CA518A200283FDB /* MaterialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCA1C7E2CA518A200283FDB /* MaterialTableViewCell.swift */; };
 		6BE062E42CA376FC004AC311 /* SFProText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BE062E32CA376FC004AC311 /* SFProText-Bold.ttf */; };
 		6BE062E92CA473F3004AC311 /* PriceTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE062E82CA473F3004AC311 /* PriceTextField.swift */; };
 		6BE062EE2CA48490004AC311 /* DocumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE062EC2CA48490004AC311 /* DocumentsViewController.swift */; };
@@ -106,6 +115,15 @@
 		6BCA1C5C2CA4EF3D00283FDB /* DeadlineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlineModel.swift; sourceTree = "<group>"; };
 		6BCA1C5F2CA4F00000283FDB /* DeadlineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlineViewModel.swift; sourceTree = "<group>"; };
 		6BCA1C652CA4F99400283FDB /* BaseTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextView.swift; sourceTree = "<group>"; };
+		6BCA1C692CA506A900283FDB /* MaterialsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialsViewController.swift; sourceTree = "<group>"; };
+		6BCA1C6A2CA506A900283FDB /* MaterialsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MaterialsViewController.xib; sourceTree = "<group>"; };
+		6BCA1C6F2CA50CD400283FDB /* MaterialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialViewController.swift; sourceTree = "<group>"; };
+		6BCA1C702CA50CD400283FDB /* MaterialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MaterialViewController.xib; sourceTree = "<group>"; };
+		6BCA1C742CA5120400283FDB /* MaterialsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialsViewModel.swift; sourceTree = "<group>"; };
+		6BCA1C772CA512AD00283FDB /* MaterialModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialModel.swift; sourceTree = "<group>"; };
+		6BCA1C7A2CA5166800283FDB /* MaterialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialViewModel.swift; sourceTree = "<group>"; };
+		6BCA1C7E2CA518A200283FDB /* MaterialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialTableViewCell.swift; sourceTree = "<group>"; };
+		6BCA1C7F2CA518A200283FDB /* MaterialTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MaterialTableViewCell.xib; sourceTree = "<group>"; };
 		6BE062E32CA376FC004AC311 /* SFProText-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Bold.ttf"; sourceTree = "<group>"; };
 		6BE062E82CA473F3004AC311 /* PriceTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceTextField.swift; sourceTree = "<group>"; };
 		6BE062EC2CA48490004AC311 /* DocumentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +161,8 @@
 		6B0DA2CE2CA2E6B800C19A6D /* Jurisprudence */ = {
 			isa = PBXGroup;
 			children = (
+				6BCA1C6D2CA50C7D00283FDB /* Material */,
+				6BCA1C672CA5068D00283FDB /* Materials */,
 				6BCA1C522CA4D48600283FDB /* Calendar */,
 				6BCA1C492CA4C19800283FDB /* Document */,
 				6BE062EA2CA48426004AC311 /* Documents */,
@@ -368,6 +388,77 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		6BCA1C672CA5068D00283FDB /* Materials */ = {
+			isa = PBXGroup;
+			children = (
+				6BCA1C822CA524AB00283FDB /* Cell */,
+				6BCA1C762CA512A300283FDB /* Model */,
+				6BCA1C732CA511F300283FDB /* ViewModel */,
+				6BCA1C682CA5069900283FDB /* View */,
+			);
+			path = Materials;
+			sourceTree = "<group>";
+		};
+		6BCA1C682CA5069900283FDB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6BCA1C692CA506A900283FDB /* MaterialsViewController.swift */,
+				6BCA1C6A2CA506A900283FDB /* MaterialsViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6BCA1C6D2CA50C7D00283FDB /* Material */ = {
+			isa = PBXGroup;
+			children = (
+				6BCA1C792CA5165B00283FDB /* ViewModel */,
+				6BCA1C6E2CA50CBE00283FDB /* View */,
+			);
+			path = Material;
+			sourceTree = "<group>";
+		};
+		6BCA1C6E2CA50CBE00283FDB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6BCA1C6F2CA50CD400283FDB /* MaterialViewController.swift */,
+				6BCA1C702CA50CD400283FDB /* MaterialViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6BCA1C732CA511F300283FDB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6BCA1C742CA5120400283FDB /* MaterialsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6BCA1C762CA512A300283FDB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6BCA1C772CA512AD00283FDB /* MaterialModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6BCA1C792CA5165B00283FDB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6BCA1C7A2CA5166800283FDB /* MaterialViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6BCA1C822CA524AB00283FDB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6BCA1C7F2CA518A200283FDB /* MaterialTableViewCell.xib */,
+				6BCA1C7E2CA518A200283FDB /* MaterialTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		6BE062EA2CA48426004AC311 /* Documents */ = {
 			isa = PBXGroup;
 			children = (
@@ -457,14 +548,17 @@
 				6B0DA2F62CA2F02A00C19A6D /* Mulish-Regular.ttf in Resources */,
 				6B0DA2DC2CA2E6BA00C19A6D /* Assets.xcassets in Resources */,
 				6B0DA2DF2CA2E6BA00C19A6D /* Base in Resources */,
+				6BCA1C712CA50CD400283FDB /* MaterialViewController.xib in Resources */,
 				6B0DA2D72CA2E6B800C19A6D /* Base in Resources */,
 				6B0DA2FF2CA2F1C500C19A6D /* Menu.storyboard in Resources */,
 				6B0DA3122CA3416900C19A6D /* WorksViewController.xib in Resources */,
+				6BCA1C6B2CA506A900283FDB /* MaterialsViewController.xib in Resources */,
 				6BCA1C4D2CA4C1CE00283FDB /* DocumentViewController.xib in Resources */,
 				6B0DA2F42CA2F02100C19A6D /* Mulish-LightItalic.ttf in Resources */,
 				6B0DA2F82CA2F03400C19A6D /* Mulish-SemiBold.ttf in Resources */,
 				6BE062EF2CA48490004AC311 /* DocumentsViewController.xib in Resources */,
 				6B0DA2F02CA2EFCC00C19A6D /* Mulish-Bold.ttf in Resources */,
+				6BCA1C802CA518A200283FDB /* MaterialTableViewCell.xib in Resources */,
 				6BCA1C3E2CA48C2400283FDB /* DocumentTableViewCell.xib in Resources */,
 				6BCA1C562CA4D4A300283FDB /* DeadlinesViewController.xib in Resources */,
 				6B0DA30A2CA304D100C19A6D /* InfoViewController.xib in Resources */,
@@ -485,6 +579,8 @@
 				6B0DA3152CA3476300C19A6D /* BaseTextField.swift in Sources */,
 				6BCA1C662CA4F99400283FDB /* BaseTextView.swift in Sources */,
 				6B0DA3232CA35CB300C19A6D /* Date.swift in Sources */,
+				6BCA1C7B2CA5166800283FDB /* MaterialViewModel.swift in Sources */,
+				6BCA1C722CA50CD400283FDB /* MaterialViewController.swift in Sources */,
 				6B0DA30B2CA304D100C19A6D /* InfoViewController.swift in Sources */,
 				6B0DA2DA2CA2E6B800C19A6D /* Jurisprudence.xcdatamodeld in Sources */,
 				6BE062EE2CA48490004AC311 /* DocumentsViewController.swift in Sources */,
@@ -502,13 +598,17 @@
 				6B0DA2ED2CA2EBA400C19A6D /* NavigationViewController.swift in Sources */,
 				6BCA1C5D2CA4EF3D00283FDB /* DeadlineModel.swift in Sources */,
 				6BCA1C412CA48F6F00283FDB /* PaddingLabel.swift in Sources */,
+				6BCA1C752CA5120400283FDB /* MaterialsViewModel.swift in Sources */,
 				6BCA1C452CA4927F00283FDB /* DocumentsViewModel.swift in Sources */,
 				6BCA1C572CA4D4A300283FDB /* DeadlinesViewController.swift in Sources */,
 				6B0DA30D2CA3408800C19A6D /* View.swift in Sources */,
+				6BCA1C6C2CA506A900283FDB /* MaterialsViewController.swift in Sources */,
 				6B0DA2D22CA2E6B800C19A6D /* SceneDelegate.swift in Sources */,
 				6BCA1C4E2CA4C1CE00283FDB /* DocumentViewController.swift in Sources */,
 				6BCA1C3F2CA48C2400283FDB /* DocumentTableViewCell.swift in Sources */,
+				6BCA1C782CA512AD00283FDB /* MaterialModel.swift in Sources */,
 				6B0DA3012CA2F2A700C19A6D /* ViewController.swift in Sources */,
+				6BCA1C812CA518A200283FDB /* MaterialTableViewCell.swift in Sources */,
 				6B0DA32B2CA365F000C19A6D /* WorkModel.swift in Sources */,
 				6B0DA2FE2CA2F15500C19A6D /* StringKey.swift in Sources */,
 			);

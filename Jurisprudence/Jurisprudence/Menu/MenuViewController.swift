@@ -51,6 +51,9 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func clickedReferenceMaterials(_ sender: UIButton) {
+        let materialsVC = MaterialsViewController(nibName: "MaterialsViewController", bundle: nil)
+        self.navigationController?.pushViewController(materialsVC, animated: true)
+
     }
     
     @IBAction func clickedCalendarAndDeadlines(_ sender: UIButton) {

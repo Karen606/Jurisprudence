@@ -26,4 +26,8 @@ class DocumentTableViewCell: UITableViewCell {
         self.titleLabel.text = name
     }
     
+    func setFont() {
+        self.titleLabel.font = .regularMulish(size: 20)
+    }
+    
 }

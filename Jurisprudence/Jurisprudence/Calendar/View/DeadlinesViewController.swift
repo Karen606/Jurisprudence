@@ -137,10 +137,6 @@ class DeadlinesViewController: UIViewController {
     }
 }
 
-protocol BaseTextViewDelegate: AnyObject {
-    func didChancheSelection(_ textView: UITextView)
-}
-
 extension DeadlinesViewController: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
         if viewModel.deadlines.contains(where: { $0.date == date }) {
