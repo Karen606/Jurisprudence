@@ -140,4 +140,57 @@ class CoreDataManager {
         }
     }
     
+    func fetchDeadlines(completion: @escaping ([DeadlineModel], Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Deadline> = Deadline.fetchRequest()
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                var deadlineModels: [DeadlineModel] = []
+                for result in results {
+                    let deadlineModel = DeadlineModel(date: result.date ?? Date(), info: result.info ?? "")
+                    deadlineModels.append(deadlineModel)
+                }
+                completion(deadlineModels, nil)
+            } catch {
+                completion([], error)
+            }
+        }
+    }
+    
+    func addDeadline(date: Date, info: String, completion: @escaping (Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let deadline = Deadline(context: backgroundContext)
+            deadline.date = date
+            deadline.info = info
+            do {
+                try backgroundContext.save()
+                completion(nil)
+            } catch {
+                completion(error)
+            }
+        }
+    }
+    
+    func editDeadline(date: Date, info: String, completion: @escaping (Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Deadline> = Deadline.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "date == %@", date as NSDate)
+            
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                if let deadline = results.first {
+                    deadline.info = info
+                    try backgroundContext.save()
+                    completion(nil)
+                } else {
+                    completion(NSError(domain: "CoreData", code: 404, userInfo: [NSLocalizedDescriptionKey: "Document not found"]))
+                }
+            } catch {
+                completion(error)
+            }
+        }
+    }
 }

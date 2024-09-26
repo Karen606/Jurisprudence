@@ -54,6 +54,8 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func clickedCalendarAndDeadlines(_ sender: UIButton) {
+        let deadlinesVC = DeadlinesViewController(nibName: "DeadlinesViewController", bundle: nil)
+        self.navigationController?.pushViewController(deadlinesVC, animated: true)
     }
     
 }
