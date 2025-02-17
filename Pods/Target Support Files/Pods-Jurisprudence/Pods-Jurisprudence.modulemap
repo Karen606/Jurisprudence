@@ -1,0 +1,6 @@
+framework module Pods_Jurisprudence {
+  umbrella header "Pods-Jurisprudence-umbrella.h"
+
+  export *
+  module * { export * }
+}
